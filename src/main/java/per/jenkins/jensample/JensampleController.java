@@ -1,0 +1,17 @@
+package per.jenkins.jensample;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+class JensampleController {
+     @Autowired
+     private Jensample jensample;
+
+     @RequestMapping("/sum")
+     String sum(@RequestParam("a") Integer a, 
+                @RequestParam("b") Integer b) {
+          return String.valueOf(jensample.sum(a, b));
+     }
+}
